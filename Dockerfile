@@ -12,10 +12,12 @@ RUN cd gophernicus && make
 FROM alpine:latest
 EXPOSE 70/tcp
 VOLUME /var/gopher
+RUN mkdir -p /etc/xinetd.d/
+RUN mkdir -p /var/gopher
 COPY --from=builder /xinetd/xinetd /usr/sbin
 COPY --from=builder /gophernicus/gophernicus /usr/sbin
+COPY --from=builder /gophernicus/gophermap /var/gopher/gophermap
 COPY xinetd.conf /etc/xinetd.conf
 COPY init.sh /init.sh
-RUN mkdir -p /etc/xinetd.d/
 
 CMD ["/init.sh"]
