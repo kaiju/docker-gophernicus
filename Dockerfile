@@ -15,5 +15,7 @@ VOLUME /var/gopher
 COPY --from=builder /xinetd/xinetd /usr/sbin
 COPY --from=builder /gophernicus/gophernicus /usr/sbin
 COPY xinetd.conf /etc/xinetd.conf
+COPY init.sh /init.sh
+RUN mkdir -p /etc/xinetd.d/
 
-CMD ["/usr/sbin/xinetd", "-dontfork"]
+CMD ["/init.sh"]
