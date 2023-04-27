@@ -93,39 +93,39 @@ if [ ${DISABLE_MENU_METADATA} ]; then
 fi
 
 if [ ${DISABLE_CONTENT_DETECTION} ]; then
-	SERVER_ARGS+"${SERVER_ARGS} -nc"
+	SERVER_ARGS="${SERVER_ARGS} -nc"
 fi
 
 if [ ${DISABLE_CHARSET_CONV} ]; then
-	SERVER_ARGS+"${SERVER_ARGS} -no"
+	SERVER_ARGS="${SERVER_ARGS} -no"
 fi
 
 if [ ${DISABLE_QUERY_STRINGS} ]; then
-	SERVER_ARGS+"${SERVER_ARGS} -nq"
+	SERVER_ARGS="${SERVER_ARGS} -nq"
 fi
 
 if [ ${DISABLE_SYSLOG} ]; then
-	SERVER_ARGS+"${SERVER_ARGS} -ns"
+	SERVER_ARGS="${SERVER_ARGS} -ns"
 fi
 
 if [ ${DISABLE_AUTOGEN_CAPS} ]; then
-	SERVER_ARGS+"${SERVER_ARGS} -na"
+	SERVER_ARGS="${SERVER_ARGS} -na"
 fi
 
 if [ ${DISABLE_SERVER_STATUS} ]; then
-	SERVER_ARGS+"${SERVER_ARGS} -nt"
+	SERVER_ARGS="${SERVER_ARGS} -nt"
 fi
 
 if [ ${DISABLE_HAPROXY} ]; then
-	SERVER_ARGS+"${SERVER_ARGS} -np"
+	SERVER_ARGS="${SERVER_ARGS} -np"
 fi
 
 if [ ${DISABLE_EXECUTABLES} ]; then
-	SERVER_ARGS+"${SERVER_ARGS} -nx"
+	SERVER_ARGS="${SERVER_ARGS} -nx"
 fi
 
 if [ ${DISABLE_USERDIRS} ]; then
-	SERVER_ARGS+"${SERVER_ARGS} -nu"
+	SERVER_ARGS="${SERVER_ARGS} -nu"
 fi
 
 # Write out our gophernicus xinetd configuration with all our server arguments
