@@ -16,7 +16,7 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_PASSWORD }} 
       - name: Docker metadata
         id: meta
-        uses: docker/metadata@v4
+        uses: docker/metadata-action@v4
         with:
           images: joshkaiju/gophernicus
       - name: Build and publish
